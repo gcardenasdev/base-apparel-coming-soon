@@ -1,54 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-/* CSS RESET BEGIN */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* CSS RESET END */
 
 .attribution {
   font-size: 11px; text-align: center;
@@ -67,16 +16,14 @@ table {
 body {
   font-size: 16px;
   font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
 }
 
 #container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
   background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   max-width: 23.5em;
-
+  display: grid;
+  margin: 0 auto;
 }
 
 header img {
@@ -85,17 +32,19 @@ header img {
   height: 25%;
 }
 
-.hero img {
-  max-width: 100%;
-  height: auto;
+.hero {
+  background-image: url("images/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  width: 375px;
+  height: 250px;
 }
 
-.title {
+.main {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.title h1 {
+.main h1 {
   font-size: 2.5em;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -108,7 +57,7 @@ span {
   color: var(--DesaturatedRed);
 }
 
-.title p {
+.main p {
   color: var(--DesaturatedRed);
   font-size: 0.9em;
   line-height: 1.5;
@@ -154,11 +103,73 @@ input[type=email]::placeholder {
 }
 
 footer {
-  margin: 30px auto;
+  margin: 40px auto 10px auto;
 }
 
 
-@media only screen and (min-width: 1440px) {
+ @media only screen and (min-width: 1220px) {
+
+  #container {
+    display: grid;
+    grid-template-areas:
+    "header  header hero"
+    "main    main   hero"
+    "main    main   hero"
+    "main    main   hero";
+    background: url("images/bg-pattern-desktop.svg");
+    max-width: 100%;
+  }
+
+  .header {
+    grid-area: header;
+
+  }
+
+  header img {
+    margin: 20px 0 20px 30px;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    top: 2.5rem;
+    left: 9.5rem;
+  }
+
+  .hero {
+    background: url("images/hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 31.25rem;
+    height: auto;
+    grid-area: hero;
+  }
+
+  .main {
+    grid-area: main;
+    text-align: left;
+    width: 60%;
+    margin: 5rem auto;
+  }
+
+  .main h1 {
+    margin-left: 2rem;
+    font-size: 3.5em;
+    letter-spacing: 10px;
+    line-height: 60px;
+  }
+
+  input[type=email] {
+
+    width: 300px;
+    height: 40px;
+  }
+
+  .button {
+    width: 75px;
+  }
+
+  footer {
+    margin-top: 100px;
+  }
 
 
 
