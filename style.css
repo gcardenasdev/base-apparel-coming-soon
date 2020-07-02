@@ -14,7 +14,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 100%;
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
 }
@@ -41,7 +41,7 @@ header img {
 
 .main {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 
 .main h1 {
@@ -61,12 +61,12 @@ span {
   color: var(--DesaturatedRed);
   font-size: 0.9em;
   line-height: 1.5;
-  margin: 20px 35px;
+  margin: 1.25rem 2.1875rem;
 }
 
 form {
-  margin: 10px auto;
-  padding-left: 35px;
+  margin: 0.625rem auto;
+  padding-left: 2.1875rem;
 }
 
 input[type=email] {
@@ -103,7 +103,7 @@ input[type=email]::placeholder {
 }
 
 footer {
-  margin: 40px auto 10px auto;
+  margin: 2.5rem auto 0.625rem auto;
 }
 
 
@@ -126,7 +126,7 @@ footer {
   }
 
   header img {
-    margin: 20px 0 20px 30px;
+    margin: 1.25rem 0 1.25rem 1.875rem;
     width: 150px;
     height: 30px;
     position: relative;
@@ -168,7 +168,7 @@ footer {
   }
 
   footer {
-    margin-top: 100px;
+    margin-top: 6.25rem;
   }
 
 
