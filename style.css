@@ -6,6 +6,9 @@
   color: hsl(228, 45%, 44%);
 }
 
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --DesaturatedRed: hsl(0, 36%, 70%);
@@ -20,11 +23,11 @@ body {
   background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 
-#container {
+/* #container {
   max-width: 23.5em;
   display: grid;
   margin: 0 auto;
-}
+} */
 
 header img {
   margin: 20px 0 20px 30px;
@@ -67,19 +70,18 @@ span {
 }
 
 form {
-  margin: 0.625rem auto;
-  padding-left: 2.1875rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
-form span {
-  padding-left: 30px;
-}
 
 .email {
   background-color: hsl(0, 100%, 98%);
   border: 1px solid var(--DesaturatedRed);
   border-radius: 28px;
-  width: 200px;
+  width: 285px;
   height: 40px;
   padding: .1rem 1rem;
   color: var(--DesaturatedRed);
@@ -89,8 +91,8 @@ form span {
 
 .icon {
   position: relative;
-  top: 9px;
-  right: 20%;
+  top: -32px;
+  left: 80px;
   visibility: hidden;
 }
 
@@ -106,11 +108,19 @@ form span {
   border: 1px solid var(--SoftRed);
 }
 
+.error {
+  position: relative;
+  top: -60px;
+  left: 15px;
+}
+
 .text-error {
   color: var(--SoftRed);
   font-size: 0.7em;
   font-weight: 600;
-  padding-left: 10px;
+  position: relative;
+  top: -60px;
+  right: 70px;
 }
 
 
@@ -122,12 +132,15 @@ form span {
   border-radius: 30px;
   outline: none;
   position: relative;
-  right: 20%;
-  top: 4px;
+  top: -67px;
+  left: 130px;
   box-shadow: 0 6px 10px var(--DesaturatedRed);
+  transition: transform 0.3s linear;
 }
 
 .button:hover {
+  transform: translateX(1px);
+  box-shadow: 0 5px 8px var(--DesaturatedRed);
   background: hsl(0, 80%, 86%);
 }
 
@@ -174,7 +187,6 @@ footer {
 
   .main {
     grid-area: main;
-
     width: 60%;
     margin: 5rem auto;
   }
@@ -191,16 +203,31 @@ footer {
     text-align: left;
   }
 
+  form {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 30px;
+  }
+
   input[type=email] {
 
     width: 280px;
     height: 40px;
   }
-  .text-error {
-    padding-left: 25px;
+
+  .icon {
+    left: 220px;
   }
+
+
+  .text-error {
+    /* padding-left: 25px; */
+    right: 10px;
+  }
+
   .button {
     width: 75px;
+    left: 250px;
   }
 
   footer {
